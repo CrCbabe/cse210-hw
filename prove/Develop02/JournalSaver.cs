@@ -9,7 +9,7 @@ class JournalSaver
         string fileLocation = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(fileLocation))
         {
-            outputFile.WriteLine(Entry);
+            outputFile.WriteLine(Entry.ListEntries());
         }
     }
 }

@@ -25,6 +25,7 @@ class Journal
         else if (choice = 2)
         {
             // add code to display entries here
+            Entry.ListEntries();
         }
         else if (choice = 3)
         {
