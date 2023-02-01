@@ -8,5 +8,4 @@ class JournalSaver
         public string fileLocation = Console.ReadLine();
     File.WriteAllLines(@fileLocation, Entry)
 }
-    
 }
