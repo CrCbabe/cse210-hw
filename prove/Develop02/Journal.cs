@@ -20,7 +20,7 @@ class Journal
     {
         if (choice = 1)
         {
-            Entry;
+            Entry entry = new Entry();
         }
         else if (choice = 2)
         {
@@ -28,11 +28,11 @@ class Journal
         }
         else if (choice = 3)
         {
-            JournalSaver;
+            JournalSaver save = new JournalSaver();
         }
         else if (choice = 4)
         {
-            JournalReader;
+            JournalReader load = new JournalReader();
         }
         else if (choice = 5)
         {

@@ -12,9 +12,12 @@ class Entry
             "What can I be grateful for today?",
             "Who inspired me today?"
         ];
-    Random random = new Random();
-    int index = random.Next(prompts.Count);
+    int index = Random.Next(prompts.Count);
     public string prompt = Console.WriteLine(prompts[index]);
     public string response = Console.ReadLine();
     string date = DateTime.Now.ToString("mm/dd/yyyy");
+    public void Display()
+    {
+        Console.WriteLine($"{prompt}: {response} ({date})");
+    }
 }
