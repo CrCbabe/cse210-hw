@@ -18,6 +18,6 @@ class Entry
     string date = DateTime.Now.ToString("mm/dd/yyyy");
     public void Display()
     {
-        Console.WriteLine($"{prompt}: {response} ({date})");
+        Console.WriteLine($"{prompt}: {response} ({date})~");
     }
 }
