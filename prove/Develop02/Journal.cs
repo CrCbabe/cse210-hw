@@ -2,6 +2,7 @@ using System;
 
 class Journal
 {
+    int choice = int.Parse(Journal.Menu());
     public int Menu()
     {
         Console.WriteLine("Welcome to your personal journal! What do you want to do?");
@@ -17,17 +18,29 @@ class Journal
 
     public void RunJournal(choice)
     {
-        if choice = 1;
-        Entry
-        else if choice = 2;
-        // add code to display entries here
-        else if choice = 3;
-        JournalSaver
-        else if choice = 4;
-        JournalReader
-        else if choice = 5;
-        // add code to exit program here
-        else;
-        Console.WriteLine("Sorry, that is not an available option. Please enter again.");
+        if (choice = 1)
+        {
+            Entry;
+        }
+        else if (choice = 2)
+        {
+            // add code to display entries here
+        }
+        else if (choice = 3)
+        {
+            JournalSaver;
+        }
+        else if (choice = 4)
+        {
+            JournalReader;
+        }
+        else if (choice = 5)
+        {
+            Environment.Exit(0);
+        }
+        else
+        {
+            Console.WriteLine("Sorry, that is not an available option. Please enter again.");
+        }
     }
 }
