@@ -17,7 +17,7 @@ class Entry
         prompts.Add("What can I be grateful for today?"),
         prompts.Add("Who inspired me today?"),
     ];
-
+//place these in constructor
     index = Random.Next(prompts.Count);
     prompt = Console.WriteLine(prompts[index]);
     response = Console.ReadLine();

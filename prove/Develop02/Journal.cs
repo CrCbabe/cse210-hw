@@ -2,7 +2,12 @@ using System;
 
 class Journal
 {
-    int choice = int.Parse(Journal.Menu());
+    int choice = 0;
+    //instance of list entries
+    public Journal()
+    {
+        choice = Menu();
+    }
     public int Menu()
     {
         Console.WriteLine("Welcome to your personal journal! What do you want to do?");
@@ -18,24 +23,24 @@ class Journal
 
     public void RunJournal(choice)
     {
-        if (choice = 1)
+        if (choice == 1)
         {
             Entry entry = new Entry();
         }
-        else if (choice = 2)
+        else if (choice == 2)
         {
             // add code to display entries here
             Entry.ListEntries();
         }
-        else if (choice = 3)
+        else if (choice == 3)
         {
             JournalSaver save = new JournalSaver();
         }
-        else if (choice = 4)
+        else if (choice == 4)
         {
             JournalReader load = new JournalReader();
         }
-        else if (choice = 5)
+        else if (choice == 5)
         {
             Environment.Exit(0);
         }
