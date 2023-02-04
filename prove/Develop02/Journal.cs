@@ -22,7 +22,9 @@ class Journal
         return _choice;
     }
 
-    public void RunJournal(_choice)
+
+    //check to see if choice variable needed
+    public void RunJournal()
     {
         if (_choice == 1)
         {
