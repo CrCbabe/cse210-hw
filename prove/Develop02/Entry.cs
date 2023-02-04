@@ -13,32 +13,36 @@ class Entry
     {
     }
 
-    public List<string> _prompts = new List<string>();
-    [
+    List<string> _prompts = new List<string>();
+    string[] _prompts =
+    {
         _prompts.Add("What was the strongest emotion I felt today?"),
+        _prompts.Add("How did I see the hand of the Lord in my life today?"),
         _prompts.Add("How did I see the hand of the Lord in my life today?"),
         _prompts.Add("What did I do today that I am proud of?"),
         _prompts.Add("If I could have done something better today, what would it be?"),
         _prompts.Add("What can I be grateful for today?"),
         _prompts.Add("Who inspired me today?"),
-    ];
-//place these in constructor
+    };
+    // will this work?
+
     public Entry(int _index, string _prompt, string _response, string _date)
     {
         Random rand = new Random();
         _index = rand.Next(_prompts.Count);
-        _prompt = Console.WriteLine(_prompts[_index]);
+        _prompt = _prompts[_index];
+        Console.WriteLine(_prompt);
         _response = Console.ReadLine();
         _date = DateTime.Now.ToString("mm/dd/yyyy");
         string _entry = ($"{_prompt}: {_response} ({_date})~");
-        ListEntries();
+        Entries();
     }
 
     internal class ListEntries
     {
         private readonly string _entry;
 
-        public List<string> Entries()
+        public List<string> EntriesList()
         {
             List<string> _entries = new List<string>();
             _entries.Add(_entry);
@@ -46,7 +50,7 @@ class Entry
         }
     }
 
-    internal static ReadOnlySpan<char> ListEntries()
+    internal static ReadOnlySpan<char> Entries()
     {
         throw new NotImplementedException();
     }
