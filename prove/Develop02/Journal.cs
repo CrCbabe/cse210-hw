@@ -2,11 +2,13 @@ using System;
 
 class Journal
 {
-    int choice = 0;
+    int _choice = 0;
     //instance of list entries
+
     public Journal()
     {
-        choice = Menu();
+        _choice = Menu();
+        Entry.ListEntries obj = new Entry.ListEntries;
     }
     public int Menu()
     {
@@ -17,30 +19,30 @@ class Journal
         Console.WriteLine("3) Save the journal to a file");
         Console.WriteLine("4) Load the journal from a file");
         Console.WriteLine("5) Exit the journal");
-        int choice = Int16.Parse(Console.ReadLine());
-        return choice;
+        int _choice = Int16.Parse(Console.ReadLine());
+        return _choice;
     }
 
-    public void RunJournal(choice)
+    public void RunJournal(_choice)
     {
-        if (choice == 1)
+        if (_choice == 1)
         {
             Entry entry = new Entry();
         }
-        else if (choice == 2)
+        else if (_choice == 2)
         {
             // add code to display entries here
             Entry.ListEntries();
         }
-        else if (choice == 3)
+        else if (_choice == 3)
         {
             JournalSaver save = new JournalSaver();
         }
-        else if (choice == 4)
+        else if (_choice == 4)
         {
             JournalReader load = new JournalReader();
         }
-        else if (choice == 5)
+        else if (_choice == 5)
         {
             Environment.Exit(0);
         }
