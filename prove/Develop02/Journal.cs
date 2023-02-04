@@ -8,6 +8,7 @@ class Journal
     {
         _choice = Menu();
         Entry.ListEntries obj = new Entry.ListEntries();
+        RunJournal(_choice);
     }
     public int Menu()
     {
@@ -27,7 +28,7 @@ class Journal
     {
         if (_choice == 1)
         {
-            Entry entry = new Entry();
+            Entry _entry = new Entry();
         }
         else if (_choice == 2)
         {
@@ -36,11 +37,11 @@ class Journal
         }
         else if (_choice == 3)
         {
-            JournalSaver save = new JournalSaver();
+            JournalSaver _save = new JournalSaver();
         }
         else if (_choice == 4)
         {
-            JournalReader load = new JournalReader();
+            JournalLoader _load = new JournalLoader();
         }
         else if (_choice == 5)
         {

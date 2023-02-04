@@ -1,6 +1,6 @@
 using System;
 
-class JournalReader
+class JournalLoader
 {
     public void Read()
     {

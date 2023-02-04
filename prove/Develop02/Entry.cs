@@ -3,14 +3,15 @@ using System.Collections.Generic;
 
 class Entry
 {
-    // public int _index;
-    // public string _prompt;
-    // public string _response;
-    // public string _date;
-    // public string _entry;
+    public int _index;
+    public string _prompt;
+    public string _response;
+    public string _date;
+    public string _entry;
 
     public Entry()
     {
+        JournalEntry();
     }
 
     static string[] promptList = {
@@ -25,7 +26,7 @@ class Entry
     List<string> _prompts = new List<string>(promptList);
 
 
-    public Entry(int _index, string _prompt, string _response, string _date)
+    public string JournalEntry()
     {
         Random rand = new Random();
         _index = rand.Next(_prompts.Count);
@@ -34,7 +35,7 @@ class Entry
         _response = Console.ReadLine();
         _date = DateTime.Now.ToString("mm/dd/yyyy");
         string _entry = ($"{_prompt}: {_response} ({_date})~");
-        Entries();
+        return _entry;
     }
 
     internal class ListEntries
