@@ -33,7 +33,7 @@ class Journal
         else if (_choice == 2)
         {
             // add code to display entries here
-            Entry.ListEntries();
+            Entry.Entries();
         }
         else if (_choice == 3)
         {
