@@ -7,7 +7,14 @@ class Entry
     public string _prompt;
     public string _response;
     public string _date;
+    public string _entry;
 
+    List<string> ListEntries()
+    {
+        List<string> _entries = new List<string>();
+        _entries.Add(_entry);
+        return _entries;
+    }
     public List<string> _prompts = new List<string>();
     [
         _prompts.Add("What was the strongest emotion I felt today?"),
@@ -24,12 +31,7 @@ class Entry
         _prompt = Console.WriteLine(_prompts[_index]);
         _response = Console.ReadLine();
         _date = DateTime.Now.ToString("mm/dd/yyyy");
-        string entry = ($"{_prompt}: {_response} ({_date})~");
-        public List<string> ListEntries()
-        {
-            List<string> _entries = new List<string>();
-            _entries.Add(_entry);
-            return _entries;
-        }
+        string _entry = ($"{_prompt}: {_response} ({_date})~");
+        ListEntries();
     }
 }
