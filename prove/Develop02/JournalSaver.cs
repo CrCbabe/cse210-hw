@@ -4,7 +4,7 @@ using System.IO;
 class JournalSaver
 {
     //instance of list entries
-    Entry.ListEntries obj = new Entry.ListEntries
+    Entry.ListEntries obj = new Entry.ListEntries()
     public void Save()
     {
         Console.WriteLine("Choose where you wish to save your journal to (Please include the full file path):");
