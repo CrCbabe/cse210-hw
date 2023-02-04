@@ -23,8 +23,7 @@ class Journal
     }
 
 
-    //check to see if choice variable needed
-    public void RunJournal()
+    public void RunJournal(int _choice)
     {
         if (_choice == 1)
         {

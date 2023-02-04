@@ -3,28 +3,27 @@ using System.Collections.Generic;
 
 class Entry
 {
-    public int _index;
-    public string _prompt;
-    public string _response;
-    public string _date;
-    public string _entry;
+    // public int _index;
+    // public string _prompt;
+    // public string _response;
+    // public string _date;
+    // public string _entry;
 
     public Entry()
     {
     }
 
-    List<string> _prompts = new List<string>();
-    string[] _prompts =
-    {
-        _prompts.Add("What was the strongest emotion I felt today?"),
-        _prompts.Add("How did I see the hand of the Lord in my life today?"),
-        _prompts.Add("How did I see the hand of the Lord in my life today?"),
-        _prompts.Add("What did I do today that I am proud of?"),
-        _prompts.Add("If I could have done something better today, what would it be?"),
-        _prompts.Add("What can I be grateful for today?"),
-        _prompts.Add("Who inspired me today?"),
+    static string[] promptList = {
+        "What was the strongest emotion I felt today?",
+        "How did I see the hand of the Lord in my life today?",
+        "How did I see the hand of the Lord in my life today?",
+        "What did I do today that I am proud of?",
+        "If I could have done something better today, what would it be?",
+        "What can I be grateful for today?",
+        "Who inspired me today?",
     };
-    // will this work?
+    List<string> _prompts = new List<string>(promptList);
+
 
     public Entry(int _index, string _prompt, string _response, string _date)
     {
