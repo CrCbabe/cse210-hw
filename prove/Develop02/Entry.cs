@@ -9,12 +9,10 @@ class Entry
     public string _date;
     public string _entry;
 
-    List<string> ListEntries()
+    public Entry()
     {
-        List<string> _entries = new List<string>();
-        _entries.Add(_entry);
-        return _entries;
     }
+
     public List<string> _prompts = new List<string>();
     [
         _prompts.Add("What was the strongest emotion I felt today?"),
@@ -33,5 +31,22 @@ class Entry
         _date = DateTime.Now.ToString("mm/dd/yyyy");
         string _entry = ($"{_prompt}: {_response} ({_date})~");
         ListEntries();
+    }
+
+    internal class ListEntries
+    {
+        private readonly string _entry;
+
+        public List<string> Entries()
+        {
+            List<string> _entries = new List<string>();
+            _entries.Add(_entry);
+            return _entries;
+        }
+    }
+
+    internal static ReadOnlySpan<char> ListEntries()
+    {
+        throw new NotImplementedException();
     }
 }

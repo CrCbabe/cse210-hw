@@ -3,12 +3,11 @@ using System;
 class Journal
 {
     int _choice = 0;
-    //instance of list entries
 
     public Journal()
     {
         _choice = Menu();
-        Entry.ListEntries obj = new Entry.ListEntries;
+        Entry.ListEntries obj = new Entry.ListEntries();
     }
     public int Menu()
     {
