@@ -25,7 +25,8 @@ class Entry
 //place these in constructor
     public Entry(int _index, string _prompt, string _response, string _date)
     {
-        _index = Random.Next(_prompts.Count);
+        Random rand = new Random();
+        _index = rand.Next(_prompts.Count);
         _prompt = Console.WriteLine(_prompts[_index]);
         _response = Console.ReadLine();
         _date = DateTime.Now.ToString("mm/dd/yyyy");
