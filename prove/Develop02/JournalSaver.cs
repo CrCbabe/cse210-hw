@@ -3,6 +3,10 @@ using System.IO;
 
 class JournalSaver
 {
+    public JournalSaver()
+    {
+        Save();
+    }
     //instance of list entries
     Entry.ListEntries _listEntries = new Entry.ListEntries();
     public void Save()
@@ -11,7 +15,7 @@ class JournalSaver
         string _fileLocation = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(_fileLocation))
         {
-            outputFile.WriteLine(Entry.Entries());
+            outputFile.WriteLine(_listEntries);
         }
     }
 }

@@ -6,9 +6,14 @@ class Journal
 
     public Journal()
     {
-        _choice = Menu();
-        Entry.ListEntries obj = new Entry.ListEntries();
-        RunJournal(_choice);
+        while (_choice != 5)
+        {
+            Console.WriteLine();
+            _choice = Menu();
+            Entry.ListEntries obj = new Entry.ListEntries();
+            RunJournal(_choice);
+        }
+
     }
     public int Menu()
     {
@@ -33,7 +38,7 @@ class Journal
         else if (_choice == 2)
         {
             // add code to display entries here
-            Entry.Entries();
+            // Entry _entryList = new Entry.EntriesList();
         }
         else if (_choice == 3)
         {

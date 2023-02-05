@@ -11,7 +11,8 @@ class Entry
 
     public Entry()
     {
-        JournalEntry();
+        _entry = JournalEntry();
+        EntriesList();
     }
 
     static string[] promptList = {
@@ -42,16 +43,11 @@ class Entry
     {
         private readonly string _entry;
 
-        public List<string> EntriesList()
-        {
-            List<string> _entries = new List<string>();
-            _entries.Add(_entry);
-            return _entries;
-        }
     }
-
-    internal static ReadOnlySpan<char> Entries()
+    public List<string> EntriesList()
     {
-        throw new NotImplementedException();
+        List<string> _entries = new List<string>();
+        _entries.Add(_entry);
+        return _entries;
     }
 }
