@@ -9,10 +9,10 @@ class Entry
     public string _date;
     public string _entry;
 
+
     public Entry()
     {
-        _entry = JournalEntry();
-        EntriesList(_entry);
+        JournalEntry();
     }
 
     static string[] promptList = {
@@ -36,16 +36,7 @@ class Entry
         _response = Console.ReadLine();
         _date = DateTime.Now.ToString("mm/dd/yyyy");
         string _entry = ($"{_prompt}: {_response} ({_date})~");
+        Program.saveHere.Add(_entry);
         return _entry;
-    }
-
-    internal class ListEntries
-    {
-    }
-    public static List<string> EntriesList(string _entry)
-    {
-        List<string> _entries = new List<string>();
-        _entries.Add(_entry);
-        return _entries;
     }
 }

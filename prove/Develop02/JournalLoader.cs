@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class JournalLoader
 {
@@ -6,16 +7,15 @@ class JournalLoader
     {
         Read();
     }
-
+    public string _filename = "";
     public void Read()
     {
-        Console.WriteLine("Choose where you wish to load your journal from (Please include the full file path):");
+        Console.WriteLine("Choose where you wish to load your journal from:");
         string _fileName = Console.ReadLine();
-        string[] _entries = System.IO.File.ReadAllLines(_fileName);
-        foreach (string _entry in _entries)
+        string[] _entries = File.ReadAllLines($"{_fileName}.txt");
+        foreach (string entry in _entries)
         {
-            string[] parts = _entry.Split("~");
+            Program.saveHere.Add(entry);
         }
     }
-
 }

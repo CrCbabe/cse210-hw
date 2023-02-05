@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 
 class JournalSaver
 {
@@ -7,15 +6,11 @@ class JournalSaver
     {
         Save();
     }
-    //instance of list entries
-    Entry.ListEntries _listEntries = new Entry.ListEntries();
     public void Save()
     {
-        Console.WriteLine("Choose where you wish to save your journal to (Please include the full file path):");
+        Console.WriteLine("Choose where you wish to save your journal to:");
         string _fileLocation = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter(_fileLocation))
-        {
-            outputFile.WriteLine(_listEntries);
-        }
+        string file = ($"{_fileLocation}.txt");
+        Program.saveHere.Add(file);
     }
 }

@@ -3,5 +3,15 @@ using System.Collections.Generic;
 
 class DisplayJournal
 {
-    List<Entry> _journalEntry = new List<Entry>();
+    public DisplayJournal()
+    {
+        Display();
+    }
+    public void Display()
+    {
+        foreach (var item in Program.saveHere)
+        {
+            Console.WriteLine($"\n{item}");
+        }
+    }
 }
