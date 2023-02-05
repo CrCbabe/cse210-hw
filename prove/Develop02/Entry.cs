@@ -12,7 +12,7 @@ class Entry
     public Entry()
     {
         _entry = JournalEntry();
-        EntriesList();
+        EntriesList(_entry);
     }
 
     static string[] promptList = {
@@ -24,8 +24,8 @@ class Entry
         "What can I be grateful for today?",
         "Who inspired me today?",
     };
-    List<string> _prompts = new List<string>(promptList);
 
+    List<string> _prompts = new List<string>(promptList);
 
     public string JournalEntry()
     {
@@ -41,10 +41,8 @@ class Entry
 
     internal class ListEntries
     {
-        private readonly string _entry;
-
     }
-    public List<string> EntriesList()
+    public static List<string> EntriesList(string _entry)
     {
         List<string> _entries = new List<string>();
         _entries.Add(_entry);
