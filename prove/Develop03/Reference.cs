@@ -13,11 +13,11 @@ class Reference
     };
 
     List<string> _scriptures = new List<string>(scriptureList);
-    public void ChooseScripture()
+    public string ChooseScripture()
     {
         Random rand = new Random();
         _index = rand.Next(_scriptures.Count);
         _scripture = _scriptures[_index];
-        //add code to split _scripture at the ~ and assign reference and verses to proper indexes
+        return _scripture;
     }
 }
