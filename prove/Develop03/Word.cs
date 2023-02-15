@@ -17,7 +17,7 @@ private void Show()
 
 }
 
-private void IsHidden()
+private bool IsHidden()
 {
 
 }
