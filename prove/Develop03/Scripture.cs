@@ -28,9 +28,12 @@ class Scripture
     private void HideWords()
     {
         Console.WriteLine("Test complete"); //delete this after successful test
+        string[] _words = _verse.Split("");
+        Word wordProcess = new Word();
+        string[] _hide = wordProcess.GetRenderedText(_words);
     }
 
-    private void GetRenderedText()
+    private void RenderedText()
     {
         Word renderedText = new Word();
     }
