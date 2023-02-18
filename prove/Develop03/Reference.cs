@@ -5,10 +5,6 @@ class Reference
     private string _scripture;
     private int _index;
 
-    public Reference()
-    {
-        ChooseScripture();
-    }
     static string[] scriptureList = {
         "Isaiah 29:13-14~Wherefore the Lord said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men: \nTherefore, behold, I will proceed to do a marvellous work among this people, even a marvellous work and a wonder: for the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid.",
         "Matthew 6:24~No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.",

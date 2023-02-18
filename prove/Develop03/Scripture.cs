@@ -9,11 +9,6 @@ class Scripture
     static string _reference = _scripture[0];
     static string _verse = _scripture[1];
 
-    public Scripture()
-    {
-        Memorize();
-    }
-
     public void Memorize()
     {
         Console.WriteLine($"{_reference}: {_verse}");
@@ -29,7 +24,7 @@ class Scripture
             else
             {
                 Console.Clear();
-                HideWords();
+                _verse = HideWords(_verse);
             }
         }
         else
@@ -38,13 +33,13 @@ class Scripture
         }
     }
 
-    //fix private void later to appropriate
-    private void HideWords()
+
+    private string HideWords(string verse)
     {
-        string[] _words = _verse.Split("");
+        string[] _words = verse.Split("");
         Word wordProcess = new Word();
         string[] _hide = wordProcess.GetRenderedText(_words);
-
+        return string.Concat(_hide);
     }
 
     // private void RenderedText()
