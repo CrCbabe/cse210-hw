@@ -41,11 +41,10 @@ class Scripture
     //fix private void later to appropriate
     private void HideWords()
     {
-        Console.WriteLine("Test complete"); //delete this after successful test
-        // string[] _words = _verse.Split("");
-        // Word wordProcess = new Word();
-        // string[] _hide = wordProcess.GetRenderedText(_words);
-        // return
+        string[] _words = _verse.Split("");
+        Word wordProcess = new Word();
+        string[] _hide = wordProcess.GetRenderedText(_words);
+
     }
 
     // private void RenderedText()
