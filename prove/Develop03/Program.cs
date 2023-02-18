@@ -1,4 +1,4 @@
-class Program
+class RunProgram
 {
     static void Main(string[] args)
     {
