@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 class Scripture
 {
@@ -12,16 +13,24 @@ class Scripture
     public void Memorize()
     {
         Console.WriteLine($"{_reference}: {_verse}");
-        Console.WriteLine("Press Enter to continue, or type 'quit' to finish");
-        string _input = Console.ReadLine();
-        if (_input == "quit")
+        bool isHidden = IsCompletelyHidden(_verse);
+        if (isHidden == false)
         {
-            Environment.Exit(0);
+            Console.WriteLine("Press Enter to continue, or type 'quit' to finish");
+            string _input = Console.ReadLine();
+            if (_input == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.Clear();
+                HideWords();
+            }
         }
         else
         {
-            Console.Clear();
-            HideWords();
+            Environment.Exit(0);
         }
     }
 
@@ -32,6 +41,7 @@ class Scripture
         // string[] _words = _verse.Split("");
         // Word wordProcess = new Word();
         // string[] _hide = wordProcess.GetRenderedText(_words);
+        // return
     }
 
     private void RenderedText()
@@ -39,8 +49,14 @@ class Scripture
         Word renderedText = new Word();
     }
 
-    private void IsCompletelyHidden()
+    private static bool IsCompletelyHidden(String verse)
     {
-        Environment.Exit(0);
+        bool hidden = false;
+        Regex reg = new Regex("^[a-zA-Z]+$");
+        if (reg.Match(verse).Success)
+            hidden = false;
+        else
+            hidden = true;
+        return hidden;
     }
 }
