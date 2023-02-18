@@ -9,6 +9,10 @@ class Scripture
     static string _reference = _scripture[0];
     static string _verse = _scripture[1];
 
+    public Scripture()
+    {
+        Memorize();
+    }
 
     public void Memorize()
     {
@@ -44,19 +48,13 @@ class Scripture
         // return
     }
 
-    private void RenderedText()
-    {
-        Word renderedText = new Word();
-    }
+    // private void RenderedText()
+    // {
+    //     Word renderedText = new Word();
+    // }
 
     private static bool IsCompletelyHidden(String verse)
     {
-        bool hidden = false;
-        Regex reg = new Regex("^[a-zA-Z]+$");
-        if (reg.Match(verse).Success)
-            hidden = false;
-        else
-            hidden = true;
-        return hidden;
+        return Regex.IsMatch(verse, @"^[a-zA-Z]+$");
     }
 }
