@@ -19,3 +19,5 @@ class RunProgram
         }
     }
 }
+
+// included code in Reference class to randomly chose a scripture from an array
