@@ -11,8 +11,6 @@ class RunProgram
             Console.Clear();
             scripture.HideWords();
             scripture.DisplayScripture();
-            // _verse = HideWords(_verse);
-            // Console.WriteLine($"{_reference}: {_verse}"); // hopefully this works
 
             Console.WriteLine("Press Enter to continue, or type 'quit' to finish");
             _input = Console.ReadLine();
