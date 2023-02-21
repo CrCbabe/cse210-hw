@@ -1,24 +1,52 @@
 using System;
 
-class Word
+public class Word
 {
-    public string[] GetRenderedText(String[] verse);
+    private string _word;
+    private string _hiddenWord = "";
+    private bool _isHidden = false;
+
+    public Word(string word)
     {
-        renderText = 
+        _word = word;
+        CreateHiddenWord();
     }
-//fix private void later to appropriate
-private void Hide()
-{
 
-}
+    private void CreateHiddenWord()
+    {
+        foreach (char letter in _word)
+        {
+            if (letter != '.' || letter != '!' || letter != '?' ||
+                letter != ';' || letter != ':' || letter != ',')
+            {
+                _hiddenWord += "_";
+            }
+            else
+            {
+                _hiddenWord += letter;
+            }
+        }
+    }
+    public void DisplayWord()
+    {
+        if (_isHidden)
+        {
+            Console.Write(_hiddenWord);
+        }
+        else
+        {
+            Console.Write(_word);
+        }
+    }
+    public void HideWord()
+    {
+        _isHidden = true;
+    }
 
-private void Show()
-{
+    public void ShowWord()
+    {
+        _isHidden = false;
+    }
 
-}
 
-private bool IsHidden()
-{
-
-}
 }
