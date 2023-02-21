@@ -27,6 +27,7 @@ public class Word
             }
         }
     }
+
     public void DisplayWord()
     {
         if (_isHidden)
@@ -38,6 +39,7 @@ public class Word
             Console.Write(_word);
         }
     }
+
     public void HideWord()
     {
         _isHidden = true;
@@ -47,6 +49,4 @@ public class Word
     {
         _isHidden = false;
     }
-
-
 }

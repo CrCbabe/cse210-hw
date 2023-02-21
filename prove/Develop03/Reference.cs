@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 class Reference
 {
     private string _scripture;
@@ -13,6 +14,7 @@ class Reference
     };
 
     private List<string> _scriptures = new List<string>(scriptureList);
+
     public string ChooseScripture()
     {
         Random rand = new Random();
