@@ -22,7 +22,7 @@ class Program
             }
             else if (choice == 3)
             {
-                Listing list = new Listing();
+                Listing listing = new Listing();
             }
         }
     }
