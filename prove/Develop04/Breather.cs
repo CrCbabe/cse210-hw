@@ -1,6 +1,6 @@
 using System;
 
-class Breather
+class Breather : Activity
 {
 
 }

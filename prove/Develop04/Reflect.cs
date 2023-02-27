@@ -1,6 +1,6 @@
 using System;
 
-class Reflect
+class Reflect : Activity
 {
 
 }
