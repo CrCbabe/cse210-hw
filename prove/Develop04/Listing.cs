@@ -4,7 +4,21 @@ using System.Threading;
 
 class Listing : Activity
 {
-    List<string> prompts = new List<string>();
+    private static string[] promptList = {
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "Who are some of your personal heroes?",
+    };
+
+    List<string> prompts = new List<string>(promptList);
+
+    public Listing()
+    {
+        SetActivity();
+        SetWelcome();
+        SetDescription();
+    }
 
     public override void SetWelcome()
     {
