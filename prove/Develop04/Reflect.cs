@@ -31,6 +31,21 @@ class Reflect : Activity
         SetDescription();
     }
 
+    private void Instruction()
+    {
+        string _prompt = ChoosePrompt(prompts);
+        GetReady();
+        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine($"\n --- {_prompt} --- ");
+        Console.Write("\nWhen you have something in mind, press enter to continue,");
+        CountDown(5);
+    }
+
+    private void Reflection()
+    {
+
+    }
+
     public override void SetWelcome()
     {
         _welcome = "Welcome to the Reflection Activity";

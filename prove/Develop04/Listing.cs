@@ -12,12 +12,27 @@ class Listing : Activity
     };
 
     List<string> prompts = new List<string>(promptList);
+    List<string> _responses = new List<string>();
 
     public Listing()
     {
         SetActivity();
         SetWelcome();
         SetDescription();
+    }
+
+    private void Instruction()
+    {
+        string _prompt = ChoosePrompt(prompts);
+        GetReady();
+        Console.WriteLine("List as many responses as you can to the following prompt the following prompt:");
+        Console.WriteLine($" --- {_prompt} --- ");
+        Console.WriteLine("When you have something in mind, press enter to continue,");
+    }
+
+    private void RunList()
+    {
+
     }
 
     public override void SetWelcome()
