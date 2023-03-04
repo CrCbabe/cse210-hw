@@ -25,7 +25,7 @@ class Breather : Activity
             CountDown(4);
             Console.Write($"\nBreathe out...");
             CountDown(6);
-            Console.WriteLine("\n");
+            Console.WriteLine();
         }
         timer.Stop();
     }
