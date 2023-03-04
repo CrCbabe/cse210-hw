@@ -6,6 +6,7 @@ class Activity
 {
     private int _index;
     private string _prompt;
+    protected string _activity;
     protected string _welcome;
     protected string _description;
     string[] _frames = {
@@ -58,15 +59,20 @@ class Activity
         _description = "";
     }
 
+    public virtual void SetActivity()
+    {
+        _activity = "";
+    }
+
     private void Congrats(int time, string activity)
     {
         Console.WriteLine("Well done!!");
         Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
     }
 
-    string ChoosePrompt(List<string> prompts)
+    private string ChoosePrompt(List<string> prompts)
     {
-        while (prompts != ) //whilst the prompt list is not empty
+        while (prompts.Count != 0) //whilst the prompt list is not empty
         {
             Random rand = new Random();
             _index = rand.Next(prompts.Count);

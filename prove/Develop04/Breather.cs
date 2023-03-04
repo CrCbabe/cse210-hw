@@ -3,7 +3,6 @@ using System.Threading;
 
 class Breather : Activity
 {
-    private string _activity = "Breathing";
     public Breather()
     {
         int time = Welcome();
@@ -20,4 +19,8 @@ class Breather : Activity
         _description = "This activity will help you relax by walking through breathing in and our slowly. Clear you mind and focus on your breathing.";
     }
 
+    public override void SetActivity()
+    {
+        _activity = "Breathing";
+    }
 }
