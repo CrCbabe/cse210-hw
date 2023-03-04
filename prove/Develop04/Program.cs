@@ -30,3 +30,6 @@ class Program
         }
     }
 }
+
+// Added method in activity to remove prompts when chosen (so there are no repeats)
+// Used polymorphism to define the welcome, description, and activity attributes in each child class
