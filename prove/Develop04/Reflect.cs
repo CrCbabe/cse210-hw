@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Diagnostics;
 
 class Reflect : Activity
 {
+    Stopwatch timer = new Stopwatch();
+
     private static string[] promptList = {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -29,6 +32,10 @@ class Reflect : Activity
         SetActivity();
         SetWelcome();
         SetDescription();
+        int time = Welcome();
+        Instruction();
+        Reflection(time);
+        Congrats(time, _activity);
     }
 
     private void Instruction()
@@ -41,9 +48,14 @@ class Reflect : Activity
         CountDown(5);
     }
 
-    private void Reflection()
+    private void Reflection(int time)
     {
+        timer.Start();
+        while (timer.Elapsed.TotalSeconds < time)
+        {
 
+        }
+        timer.Stop();
     }
 
     public override void SetWelcome()

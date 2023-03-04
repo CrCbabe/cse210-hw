@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Diagnostics;
 
 class Listing : Activity
 {
+    Stopwatch timer = new Stopwatch();
+
     private static string[] promptList = {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
@@ -19,6 +22,10 @@ class Listing : Activity
         SetActivity();
         SetWelcome();
         SetDescription();
+        int time = Welcome();
+        Instruction();
+        RunList(time);
+        Congrats(time, _activity);
     }
 
     private void Instruction()
@@ -30,9 +37,14 @@ class Listing : Activity
         Console.WriteLine("When you have something in mind, press enter to continue,");
     }
 
-    private void RunList()
+    private void RunList(int time)
     {
+        timer.Start();
+        while (timer.Elapsed.TotalSeconds < time)
+        {
 
+        }
+        timer.Stop();
     }
 
     public override void SetWelcome()
