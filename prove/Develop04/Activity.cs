@@ -16,7 +16,17 @@ class Activity
         "-"
     };
 
-    private void Timer(int time) //change to implement actual duration?
+    protected int Welcome()
+    {
+        Console.Clear();
+        Console.WriteLine(_welcome);
+        Console.WriteLine($"\n{_description}");
+        Console.WriteLine("\nHow long, in seconds, would you like for your session?");
+        int _duration = int.Parse(Console.ReadLine());
+        return _duration;
+    }
+
+    protected void RunTimer(int time) //change to implement actual duration?
     {
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(time);
@@ -24,10 +34,17 @@ class Activity
         Thread.Sleep(3000);
 
         DateTime currentTime = DateTime.Now;
-        if (currentTime < futureTime)
+        if (currentTime == futureTime)
         {
-            Console.WriteLine("You have completed the activity");
+            Congrats(time, _activity); //maybe this works
         }
+    }
+
+    protected void GetReady()
+    {
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        PlayAnimation();
     }
 
     private void PlayAnimation()
@@ -40,13 +57,30 @@ class Activity
         }
     }
 
-    protected int Welcome()
+    protected void CountDown(int counter)
     {
-        Console.Write(_welcome);
-        Console.Write(_description);
-        Console.WriteLine("How long, in seconds, would you like for your session?");
-        int _duration = int.Parse(Console.ReadLine());
-        return _duration;
+        while (counter > 0)
+        {
+            Console.Write(counter);
+            Thread.Sleep(1000);
+            counter -= 1;
+            Console.Write("\b \b");
+        }
+    }
+
+    private void Congrats(int time, string activity)
+    {
+        Console.WriteLine("Well done!!");
+        Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
+    }
+
+    protected string ChoosePrompt(List<string> prompts)
+    {
+        Random rand = new Random();
+        _index = rand.Next(prompts.Count);
+        _prompt = prompts[_index];
+        prompts.Remove(_prompt);
+        return _prompt;
     }
 
     public virtual void SetWelcome()
@@ -64,21 +98,5 @@ class Activity
         _activity = "";
     }
 
-    private void Congrats(int time, string activity)
-    {
-        Console.WriteLine("Well done!!");
-        Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
-    }
 
-    // private string ChoosePrompt(List<string> prompts)
-    // {
-    //     if (prompts.Count != 0) //whilst the prompt list is not empty
-    //     {
-    //         Random rand = new Random();
-    //         _index = rand.Next(prompts.Count);
-    //         _prompt = prompts[_index];
-    //         prompts.Remove(_prompt);
-    //         return _prompt;
-    //     }
-    // }
 }
