@@ -30,12 +30,12 @@ class Activity
     {
         Console.Clear();
         Console.WriteLine("Get ready...");
-        PlayAnimation();
+        PlayAnimation(3);
     }
 
-    private void PlayAnimation()
+    protected void PlayAnimation(int loops)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < loops; i++)
         {
             foreach (string _frame in _frames)
             {
@@ -60,9 +60,9 @@ class Activity
     protected void Congrats(int time, string activity)
     {
         Console.WriteLine("\nWell done!!");
-        PlayAnimation();
+        PlayAnimation(2);
         Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
-        PlayAnimation();
+        PlayAnimation(3);
     }
 
     protected string ChoosePrompt(List<string> prompts)
