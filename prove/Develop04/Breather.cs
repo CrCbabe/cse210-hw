@@ -5,10 +5,17 @@ class Breather : Activity
 {
     public Breather()
     {
+        SetActivity();
+        SetWelcome();
+        SetDescription();
         int time = Welcome();
 
     }
 
+    // private void Breathe() {
+    //     Console.WriteLine("Get Ready...\n");
+    //     Console.WriteLine($"\nBreathe in...{count}");
+    // }
     public override void SetWelcome()
     {
         _welcome = "Welcome to the Breathing Activity";
