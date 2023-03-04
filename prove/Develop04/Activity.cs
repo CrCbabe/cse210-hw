@@ -26,20 +26,6 @@ class Activity
         return _duration;
     }
 
-    protected void RunTimer(int time) //change to implement actual duration?
-    {
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(time);
-
-        Thread.Sleep(3000);
-
-        DateTime currentTime = DateTime.Now;
-        if (currentTime == futureTime)
-        {
-            Congrats(time, _activity); //maybe this works
-        }
-    }
-
     protected void GetReady()
     {
         Console.Clear();
@@ -68,9 +54,9 @@ class Activity
         }
     }
 
-    private void Congrats(int time, string activity)
+    protected void Congrats(int time, string activity)
     {
-        Console.WriteLine("Well done!!");
+        Console.WriteLine("\nWell done!!");
         Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
     }
 
@@ -97,6 +83,4 @@ class Activity
     {
         _activity = "";
     }
-
-
 }

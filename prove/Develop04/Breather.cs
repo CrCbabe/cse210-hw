@@ -1,25 +1,32 @@
 using System;
 using System.Threading;
+using System.Diagnostics;
 
 class Breather : Activity
 {
+    Stopwatch timer = new Stopwatch();
     public Breather()
     {
         SetActivity();
         SetWelcome();
         SetDescription();
         int time = Welcome();
-        RunTimer(time);
-        Breathe();
+        Breathe(time);
+        Congrats(time, _activity);
     }
 
-    private void Breathe()
+    private void Breathe(int time)
     {
         GetReady();
-        Console.Write($"\nBreathe in...");
-        CountDown(4);
-        Console.Write($"\nBreathe out...");
-        CountDown(6);
+        timer.Start();
+        while (timer.Elapsed.TotalSeconds < time)
+        {
+            Console.Write($"\nBreathe in...");
+            CountDown(4);
+            Console.Write($"\nBreathe out...");
+            CountDown(6);
+        }
+        timer.Stop();
     }
 
     public override void SetWelcome()
