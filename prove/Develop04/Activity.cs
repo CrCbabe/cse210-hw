@@ -10,10 +10,10 @@ class Activity
     protected string _welcome;
     protected string _description;
     string[] _frames = {
-        "\"",
+        "-",
+        "\\",
         "|",
         "/",
-        "-"
     };
 
     protected int Welcome()
@@ -35,11 +35,14 @@ class Activity
 
     private void PlayAnimation()
     {
-        foreach (string _frame in _frames)
+        for (int i = 0; i < 3; i++)
         {
-            Console.Write(_frame);
-            Thread.Sleep(500);
-            Console.Write("\b \b");
+            foreach (string _frame in _frames)
+            {
+                Console.Write(_frame);
+                Thread.Sleep(500);
+                Console.Write("\b \b");
+            }
         }
     }
 
@@ -57,7 +60,9 @@ class Activity
     protected void Congrats(int time, string activity)
     {
         Console.WriteLine("\nWell done!!");
+        PlayAnimation();
         Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
+        PlayAnimation();
     }
 
     protected string ChoosePrompt(List<string> prompts)
