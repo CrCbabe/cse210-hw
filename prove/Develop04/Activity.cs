@@ -16,7 +16,7 @@ class Activity
         "-"
     };
 
-    public void Timer(int time) //change to implement actual duration?
+    private void Timer(int time) //change to implement actual duration?
     {
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(time);
@@ -30,7 +30,7 @@ class Activity
         }
     }
 
-    public void PlayAnimation()
+    private void PlayAnimation()
     {
         foreach (string _frame in _frames)
         {
@@ -70,15 +70,15 @@ class Activity
         Console.WriteLine($"\nYou have completed another {time} seconds of the {activity} Activity.");
     }
 
-    private string ChoosePrompt(List<string> prompts)
-    {
-        while (prompts.Count != 0) //whilst the prompt list is not empty
-        {
-            Random rand = new Random();
-            _index = rand.Next(prompts.Count);
-            _prompt = prompts[_index];
-            prompts.Remove(_prompt);
-            return _prompt;
-        }
-    }
+    // private string ChoosePrompt(List<string> prompts)
+    // {
+    //     if (prompts.Count != 0) //whilst the prompt list is not empty
+    //     {
+    //         Random rand = new Random();
+    //         _index = rand.Next(prompts.Count);
+    //         _prompt = prompts[_index];
+    //         prompts.Remove(_prompt);
+    //         return _prompt;
+    //     }
+    // }
 }
