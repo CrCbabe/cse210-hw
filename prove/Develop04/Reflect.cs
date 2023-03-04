@@ -44,16 +44,22 @@ class Reflect : Activity
         GetReady();
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine($"\n --- {_prompt} --- ");
-        Console.Write("\nWhen you have something in mind, press enter to continue,");
+        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
+        Console.ReadLine();
+        Console.WriteLine("\nNow ponder on each of the following questions as they relate to this experience.");
+        Console.Write("You may begin in: ");
         CountDown(5);
     }
 
     private void Reflection(int time)
     {
+        Console.Clear();
         timer.Start();
         while (timer.Elapsed.TotalSeconds < time)
         {
-
+            string question = ChoosePrompt(questions);
+            Console.Write($"\n> {question}");
+            PlayAnimation(5);
         }
         timer.Stop();
     }

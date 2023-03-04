@@ -34,7 +34,8 @@ class Listing : Activity
         GetReady();
         Console.WriteLine("List as many responses as you can to the following prompt the following prompt:");
         Console.WriteLine($" --- {_prompt} --- ");
-        Console.WriteLine("When you have something in mind, press enter to continue,");
+        Console.Write("You may begin in: ");
+        CountDown(5);
     }
 
     private void RunList(int time)
@@ -42,9 +43,13 @@ class Listing : Activity
         timer.Start();
         while (timer.Elapsed.TotalSeconds < time)
         {
-
+            Console.Write("\n> ");
+            string response = Console.ReadLine();
+            _responses.Add(response);
         }
         timer.Stop();
+        int item = _responses.Count;
+        Console.WriteLine($"You listed {item} items!");
     }
 
     public override void SetWelcome()
