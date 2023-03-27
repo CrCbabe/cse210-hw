@@ -2,13 +2,13 @@ using System;
 
 class Encounter
 {
-    protected int playerHealth;
-    protected int playerAttack;
-    protected int playerDefense;
-    protected int enemyHealth;
-    protected int enemyAttack;
-    protected int enemyDefense;
-    protected int healAmount;
+    protected int playerHealth = 30;
+    protected int playerAttack = 5;
+    protected int playerDefense = 2;
+    protected int enemyHealth = 20;
+    protected int enemyAttack = 7;
+    protected int enemyDefense = 2;
+    protected int healAmount = 3;
 
     public Encounter()
     {
