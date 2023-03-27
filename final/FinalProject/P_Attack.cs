@@ -1,12 +1,30 @@
+using System;
+
 class P_Attack : Player
 {
-    bool IsHit()
-    {
+    bool isHit;
 
+    public P_Attack()
+    {
+        isHit = HitChance();
+        if (isHit == true)
+        {
+            CalculateDamage();
+        }
+        else
+        {
+            Console.WriteLine("Player attacks and misses!");
+        }
+    }
+    bool HitChance()
+    {
+        return isHit;
     }
 
-    int CalculateDamage()
+    void CalculateDamage()
     {
-
+        int damage = playerAttack - enemyDefense;
+        enemyHealth -= damage;
+        Console.WriteLine($"Player attacks and deals {damage} damage!");
     }
 }
