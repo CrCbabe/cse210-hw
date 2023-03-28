@@ -12,17 +12,17 @@ class Encounter
 
     public Encounter()
     {
-        RunCombat();
+        while (playerHealth > 0 && enemyHealth > 0)
+        {
+            RunCombatTurn();
+        }
         EndCombat();
     }
 
-    void RunCombat()
+    void RunCombatTurn()
     {
-        while (playerHealth > 0 && enemyHealth > 0)
-        {
-            Player player = new Player();
-            Enemy enemy = new Enemy();
-        }
+        Player player = new Player();
+        Enemy enemy = new Enemy();
     }
 
     void EndCombat()
