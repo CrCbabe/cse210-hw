@@ -18,6 +18,7 @@ class P_Attack : Player
     }
     bool HitChance()
     {
+        //add code here
         return isHit;
     }
 

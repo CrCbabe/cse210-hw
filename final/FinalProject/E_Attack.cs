@@ -17,6 +17,7 @@ class E_Attack : Enemy
     }
     bool HitChance()
     {
+        //add code here
         return isHit;
     }
 
