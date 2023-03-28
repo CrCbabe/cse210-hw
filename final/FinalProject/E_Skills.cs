@@ -30,16 +30,22 @@ class E_Skill : Enemy
 
     void Guard()
     {
-
+        enemyDefense += 1;
+        Console.WriteLine("Enemy has put their guard up.");
+        Console.WriteLine("Enemy defense increased.");
     }
 
     void Focus()
     {
-
+        enemyAttack += 1;
+        Console.WriteLine("Enemy is focused.");
+        Console.WriteLine("Enemy attack increased.");
     }
 
     void Distract()
     {
-
+        playerDefense -= 1;
+        Console.WriteLine("Enemy has distracted you.");
+        Console.WriteLine("Player defense decreased");
     }
 }

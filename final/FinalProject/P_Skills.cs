@@ -35,16 +35,22 @@ class P_Skill : Player
 
     void Guard()
     {
-
+        playerDefense += 1;
+        Console.WriteLine("You have put your guard up.");
+        Console.WriteLine("Player defense increased.");
     }
 
     void Focus()
     {
-
+        playerAttack += 1;
+        Console.WriteLine("You are focused.");
+        Console.WriteLine("Player attack increased.");
     }
 
     void Distract()
     {
-
+        enemyDefense -= 1;
+        Console.WriteLine("You have distracted your opponent.");
+        Console.WriteLine("Enemy defense decreased");
     }
 }
