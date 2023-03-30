@@ -18,7 +18,17 @@ class P_Attack : Player
     }
     bool HitChance()
     {
-        //add code here
+        Random random = new Random();
+        int hitRoll = random.Next(1, 6);
+        int hitChance = hitRoll - enemyDefense;
+        if (hitChance > 0)
+        {
+            isHit = true;
+        }
+        else
+        {
+            isHit = false;
+        }
         return isHit;
     }
 
