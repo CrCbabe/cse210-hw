@@ -6,7 +6,7 @@ class Enemy : Encounter
 
     public Enemy()
     {
-        if (enemyHealth > 0)
+        if (_enemyHealth > 0)
         {
             Console.WriteLine("-- Enemy Turn --");
             enemyAction = ChooseRandomAction();
@@ -18,7 +18,7 @@ class Enemy : Encounter
             {
                 E_Skill skill = new E_Skill();
             }
-            Console.WriteLine($"Player HP - {playerHealth}, Enemy HP - {enemyHealth}");
+            Console.WriteLine($"Player HP - {_playerHealth}, Enemy HP - {_enemyHealth}");
 
         }
     }

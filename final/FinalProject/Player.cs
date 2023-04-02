@@ -8,7 +8,7 @@ class Player : Encounter
     {
         Console.WriteLine("-- Player Turn --");
         ChooseAction();
-        Console.WriteLine($"Player HP - {playerHealth}, Enemy HP - {enemyHealth}");
+        Console.WriteLine($"Player HP - {_playerHealth}, Enemy HP - {_enemyHealth}");
     }
     void ChooseAction()
     {

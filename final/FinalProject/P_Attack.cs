@@ -10,6 +10,7 @@ class P_Attack : Player
         if (isHit == true)
         {
             CalculateDamage();
+            // SetEnemyHP(health);
         }
         else
         {
@@ -20,7 +21,7 @@ class P_Attack : Player
     {
         Random random = new Random();
         int hitRoll = random.Next(1, 6);
-        int hitChance = hitRoll - enemyDefense;
+        int hitChance = hitRoll - _enemyDefense;
         if (hitChance > 0)
         {
             isHit = true;
@@ -32,10 +33,12 @@ class P_Attack : Player
         return isHit;
     }
 
-    void CalculateDamage()
+    int CalculateDamage()
     {
-        int damage = playerAttack - enemyDefense;
-        enemyHealth -= damage;
+        int damage = _playerAttack - _enemyDefense;
+        _enemyHealth -= damage;
+        SetEnemyHP(_enemyHealth);
         Console.WriteLine($"Player attacks and deals {damage} damage!");
+        return _enemyHealth;
     }
 }

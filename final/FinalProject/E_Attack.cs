@@ -19,7 +19,7 @@ class E_Attack : Enemy
     {
         Random random = new Random();
         int hitRoll = random.Next(1, 6);
-        int hitChance = hitRoll - enemyDefense;
+        int hitChance = hitRoll - _enemyDefense;
         if (hitChance > 0)
         {
             isHit = true;
@@ -33,8 +33,9 @@ class E_Attack : Enemy
 
     void CalculateDamage()
     {
-        int damage = enemyAttack - playerDefense;
-        playerHealth -= damage;
+        int damage = _enemyAttack - _playerDefense;
+        _playerHealth -= damage;
+        SetPlayerHP(_playerHealth);
         Console.WriteLine($"Enemy attacks and deals {damage} damage!");
     }
 }

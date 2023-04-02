@@ -29,27 +29,39 @@ class P_Skill : Player
     }
     void Heal()
     {
-        playerHealth += healAmount;
-        Console.WriteLine($"Player restores {healAmount} health points.");
+        _playerHealth += _healAmount;
+        SetPlayerHP(_playerHealth);
+        Console.WriteLine($"Player restores {_healAmount} health points.");
     }
 
     void Guard()
     {
-        playerDefense += 1;
+        if (_playerDefense >= 4)
+        {
+            _playerDefense = 2;
+        }
+        _playerDefense += 1;
+        SetPlayerDEF(_playerDefense);
         Console.WriteLine("You have put your guard up.");
         Console.WriteLine("Player defense increased.");
     }
 
     void Focus()
     {
-        playerAttack += 1;
+        _playerAttack += 1;
+        SetPlayerATK(_playerAttack);
         Console.WriteLine("You are focused.");
         Console.WriteLine("Player attack increased.");
     }
 
     void Distract()
     {
-        enemyDefense -= 1;
+        if (_enemyDefense == 0)
+        {
+            _enemyDefense = 2;
+        }
+        _enemyDefense -= 1;
+        SetEnemyDEF(_enemyDefense);
         Console.WriteLine("You have distracted your opponent.");
         Console.WriteLine("Enemy defense decreased");
     }
