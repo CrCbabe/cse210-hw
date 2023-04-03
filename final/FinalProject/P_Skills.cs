@@ -2,6 +2,11 @@ using System;
 
 class P_Skill : Player
 {
+    // int playerHealth = GetPlayerHP();
+    // int playerDefense = GetPlayerDEF();
+    // int playerAttack = GetPlayerATK();
+    // int enemyDefense = GetEnemyDEF();
+
     public P_Skill()
     {
         Console.WriteLine("Choose what skill you wish to use (type in the number):");
@@ -29,9 +34,9 @@ class P_Skill : Player
     }
     void Heal()
     {
-        _playerHealth += _healAmount;
+        _playerHealth += 3;
         SetPlayerHP(_playerHealth);
-        Console.WriteLine($"Player restores {_healAmount} health points.");
+        Console.WriteLine("Player restores 3 health points.");
     }
 
     void Guard()

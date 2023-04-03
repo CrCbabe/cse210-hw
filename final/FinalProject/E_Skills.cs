@@ -2,6 +2,11 @@ using System;
 
 class E_Skill : Enemy
 {
+    // int enemyHealth = GetEnemyHP();
+    // int enemyAttack = GetEnemyATK();
+    // int enemyDefense = GetEnemyDEF();
+    // int playerDefense = GetPlayerDEF();
+
     public E_Skill()
     {
         enemyAction = ChooseRandomAction();
@@ -24,9 +29,9 @@ class E_Skill : Enemy
     }
     void Heal()
     {
-        _enemyHealth += _healAmount;
+        _enemyHealth += 3;
         SetEnemyHP(_enemyHealth);
-        Console.WriteLine($"Enemy restores {_healAmount} health points.");
+        Console.WriteLine("Enemy restores 3 health points.");
     }
 
     void Guard()

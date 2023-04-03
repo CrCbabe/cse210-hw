@@ -3,6 +3,8 @@ using System;
 class Player : Encounter
 {
     int playerAction;
+    // int playerHealth = GetPlayerHP();
+    // int enemyHealth = GetEnemyHP();
 
     public Player()
     {
@@ -22,5 +24,30 @@ class Player : Encounter
         {
             P_Skill skill = new P_Skill();
         }
+    }
+
+    public override void SetPlayerHP(int playerHP)
+    {
+        _playerHealth = playerHP;
+    }
+
+    public override void SetPlayerATK(int playerATK)
+    {
+        _playerAttack = playerATK;
+    }
+
+    public override void SetPlayerDEF(int playerDEF)
+    {
+        _playerDefense = playerDEF;
+    }
+
+    public override void SetEnemyHP(int enemyHP)
+    {
+        _enemyHealth = enemyHP;
+    }
+
+    public override void SetEnemyDEF(int enemyDEF)
+    {
+        _enemyDefense = enemyDEF;
     }
 }

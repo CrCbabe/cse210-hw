@@ -3,6 +3,9 @@ using System;
 class P_Attack : Player
 {
     bool isHit;
+    // int enemyDefense = GetEnemyDEF();
+    // int enemyHealth = GetEnemyHP();
+    // int playerAttack = GetPlayerATK();
 
     public P_Attack()
     {
@@ -10,7 +13,6 @@ class P_Attack : Player
         if (isHit == true)
         {
             CalculateDamage();
-            // SetEnemyHP(health);
         }
         else
         {
@@ -33,12 +35,11 @@ class P_Attack : Player
         return isHit;
     }
 
-    int CalculateDamage()
+    void CalculateDamage()
     {
         int damage = _playerAttack - _enemyDefense;
         _enemyHealth -= damage;
         SetEnemyHP(_enemyHealth);
         Console.WriteLine($"Player attacks and deals {damage} damage!");
-        return _enemyHealth;
     }
 }

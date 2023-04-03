@@ -3,6 +3,10 @@ using System;
 class E_Attack : Enemy
 {
     bool isHit;
+    // int playerDefense = GetPlayerDEF();
+    // int playerHealth = GetPlayerHP();
+    // int enemyAttack = GetEnemyATK();
+
     public E_Attack()
     {
         isHit = HitChance();
@@ -19,7 +23,7 @@ class E_Attack : Enemy
     {
         Random random = new Random();
         int hitRoll = random.Next(1, 6);
-        int hitChance = hitRoll - _enemyDefense;
+        int hitChance = hitRoll - _playerDefense;
         if (hitChance > 0)
         {
             isHit = true;

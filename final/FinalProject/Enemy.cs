@@ -3,6 +3,8 @@ using System;
 class Enemy : Encounter
 {
     protected int enemyAction;
+    // int playerHealth = GetPlayerHP();
+    // int enemyHealth = GetEnemyHP();
 
     public Enemy()
     {
@@ -28,5 +30,30 @@ class Enemy : Encounter
         Random random = new Random();
         enemyAction = random.Next(0, 4);
         return enemyAction;
+    }
+
+    public override void SetPlayerHP(int playerHP)
+    {
+        _playerHealth = playerHP;
+    }
+
+    public override void SetPlayerDEF(int playerDEF)
+    {
+        _playerDefense = playerDEF;
+    }
+
+    public override void SetEnemyHP(int enemyHP)
+    {
+        _enemyHealth = enemyHP;
+    }
+
+    public override void SetEnemyATK(int enemyATK)
+    {
+        _enemyAttack = enemyATK;
+    }
+
+    public override void SetEnemyDEF(int enemyDEF)
+    {
+        _enemyDefense = enemyDEF;
     }
 }
