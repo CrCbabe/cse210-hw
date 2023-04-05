@@ -1,53 +1,42 @@
 using System;
 
-class Player : Encounter
+class Player
 {
-    int playerAction;
-    // int playerHealth = GetPlayerHP();
-    // int enemyHealth = GetEnemyHP();
-
-    public Player()
+    private int playerAction;
+    public Player(int playerHP, int playerATK, int playerDEF, int enemyHP, int enemyDEF)
     {
         Console.WriteLine("-- Player Turn --");
-        ChooseAction();
-        Console.WriteLine($"Player HP - {_playerHealth}, Enemy HP - {_enemyHealth}");
+        ChooseAction(playerHP, playerATK, playerDEF, enemyHP, enemyDEF);
+        Console.WriteLine($"Player HP - {playerHP}, Enemy HP - {enemyHP}");
     }
-    void ChooseAction()
+    void ChooseAction(int playerHP, int playerATK, int playerDEF, int enemyHP, int enemyDEF)
     {
-        Console.WriteLine("You can attack (1) or use a skill (2).");
+        Console.WriteLine("Choose what you wish to do (type in the number):");
+        Console.WriteLine("  1) Attack (deal damage to your enemy)");
+        Console.WriteLine("  2) Heal (increases player Health)");
+        Console.WriteLine("  3) Guard (temporarily increse player Defense)");
+        Console.WriteLine("  4) Focus (temporarily increase player Attack)");
+        Console.WriteLine("  5) Distract (temporarily decrease enemy Defense)");
         playerAction = int.Parse(Console.ReadLine());
         if (playerAction == 1)
         {
-            P_Attack attack = new P_Attack();
+            Attack attack = new Attack(playerATK, enemyDEF, enemyHP, "Player");
         }
-        else
+        else if (playerAction == 2)
         {
-            P_Skill skill = new P_Skill();
+            Heal heal = new Heal(playerHP, "Player");
         }
-    }
-
-    public override void SetPlayerHP(int playerHP)
-    {
-        _playerHealth = playerHP;
-    }
-
-    public override void SetPlayerATK(int playerATK)
-    {
-        _playerAttack = playerATK;
-    }
-
-    public override void SetPlayerDEF(int playerDEF)
-    {
-        _playerDefense = playerDEF;
-    }
-
-    public override void SetEnemyHP(int enemyHP)
-    {
-        _enemyHealth = enemyHP;
-    }
-
-    public override void SetEnemyDEF(int enemyDEF)
-    {
-        _enemyDefense = enemyDEF;
+        else if (playerAction == 3)
+        {
+            Guard guard = new Guard(playerDEF, "Player");
+        }
+        else if (playerAction == 4)
+        {
+            Focus focus = new Focus(playerATK, "Player");
+        }
+        else if (playerAction == 5)
+        {
+            Distract distract = new Distract(enemyDEF, "Enemy", "Player");
+        }
     }
 }

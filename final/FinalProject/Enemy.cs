@@ -1,59 +1,46 @@
 using System;
 
-class Enemy : Encounter
+class Enemy
 {
-    protected int enemyAction;
-    // int playerHealth = GetPlayerHP();
-    // int enemyHealth = GetEnemyHP();
 
-    public Enemy()
+    private int enemyAction;
+
+    public Enemy(int enemyHP, int enemyATK, int enemyDEF, int playerHP, int playerDEF)
     {
-        if (_enemyHealth > 0)
-        {
-            Console.WriteLine("-- Enemy Turn --");
-            enemyAction = ChooseRandomAction();
-            if (enemyAction == 0 || enemyAction == 3)
-            {
-                E_Attack attack = new E_Attack();
-            }
-            else
-            {
-                E_Skill skill = new E_Skill();
-            }
-            Console.WriteLine($"Player HP - {_playerHealth}, Enemy HP - {_enemyHealth}");
-
-        }
+        Console.WriteLine("-- Enemy Turn --");
+        enemyAction = ChooseRandomAction();
+        RunEnemyAction(enemyAction, enemyHP, enemyATK, enemyDEF, playerHP, playerDEF);
+        Console.WriteLine($"Player HP - {playerHP}, Enemy HP - {enemyHP}");
     }
 
-    protected int ChooseRandomAction()
+    private int ChooseRandomAction()
     {
         Random random = new Random();
-        enemyAction = random.Next(0, 4);
+        enemyAction = random.Next(0, 10);
         return enemyAction;
     }
 
-    public override void SetPlayerHP(int playerHP)
+    private void RunEnemyAction(int enemyAction, int enemyHP, int enemyATK, int enemyDEF, int playerHP, int playerDEF)
     {
-        _playerHealth = playerHP;
-    }
-
-    public override void SetPlayerDEF(int playerDEF)
-    {
-        _playerDefense = playerDEF;
-    }
-
-    public override void SetEnemyHP(int enemyHP)
-    {
-        _enemyHealth = enemyHP;
-    }
-
-    public override void SetEnemyATK(int enemyATK)
-    {
-        _enemyAttack = enemyATK;
-    }
-
-    public override void SetEnemyDEF(int enemyDEF)
-    {
-        _enemyDefense = enemyDEF;
+        if (enemyAction <= 5)
+        {
+            Attack attack = new Attack(enemyATK, playerDEF, playerHP, "Enemy");
+        }
+        else if (enemyAction == 6)
+        {
+            Heal heal = new Heal(enemyHP, "Enemy");
+        }
+        else if (enemyAction == 7)
+        {
+            Guard guard = new Guard(enemyDEF, "Enemy");
+        }
+        else if (enemyAction == 8)
+        {
+            Focus focus = new Focus(enemyATK, "Enemy");
+        }
+        else if (enemyAction == 9)
+        {
+            Distract distract = new Distract(playerDEF, "Enemy", "Player");
+        }
     }
 }
