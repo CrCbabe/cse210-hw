@@ -3,21 +3,20 @@ using System;
 class Enemy
 {
 
-    private int enemyAction;
+    private int _enemyAction;
 
     public Enemy(int enemyHP, int enemyATK, int enemyDEF, int playerHP, int playerDEF)
     {
         Console.WriteLine("-- Enemy Turn --");
-        enemyAction = ChooseRandomAction();
-        RunEnemyAction(enemyAction, enemyHP, enemyATK, enemyDEF, playerHP, playerDEF);
-        Console.WriteLine($"Player HP - {playerHP}, Enemy HP - {enemyHP}");
+        _enemyAction = ChooseRandomAction();
+        RunEnemyAction(_enemyAction, enemyHP, enemyATK, enemyDEF, playerHP, playerDEF);
     }
 
     private int ChooseRandomAction()
     {
         Random random = new Random();
-        enemyAction = random.Next(0, 10);
-        return enemyAction;
+        _enemyAction = random.Next(0, 10);
+        return _enemyAction;
     }
 
     private void RunEnemyAction(int enemyAction, int enemyHP, int enemyATK, int enemyDEF, int playerHP, int playerDEF)

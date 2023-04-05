@@ -2,15 +2,30 @@ using System;
 
 class Heal
 {
+    private int _health;
+
     public Heal(int userHP, string user)
     {
-        Recover(userHP, user);
+        _health = Recover(userHP, user);
+        UpdateHP(_health, user);
     }
 
-    private void Recover(int userHP, string user)
+    private int Recover(int userHP, string user)
     {
         userHP += 3;
-        // SetEnemyHP(_enemyHealth);
         Console.WriteLine($"{user} restores 3 health points.");
+        return userHP;
+    }
+
+    private void UpdateHP(int health, string user)
+    {
+        if (user == "Player")
+        {
+            Program._playerHealth = health;
+        }
+        else
+        {
+            Program._enemyHealth = health;
+        }
     }
 }

@@ -2,16 +2,16 @@ using System;
 
 class Distract
 {
-    private int defense;
+    private int _defense;
 
     public Distract(int victimDEF, string user, string victim)
     {
         victimDEF = CheckDefense(victimDEF);
-        defense = DistractFoe(victimDEF, user, victim);
-        UpdateDEF(defense, victim);
+        _defense = DistractFoe(victimDEF, user, victim);
+        UpdateDEF(_defense, victim);
     }
 
-    int CheckDefense(int victimDEF)
+    private int CheckDefense(int victimDEF)
     {
         if (victimDEF == 0)
         {
@@ -20,16 +20,15 @@ class Distract
         return victimDEF;
     }
 
-    int DistractFoe(int victimDEF, string user, string victim)
+    private int DistractFoe(int victimDEF, string user, string victim)
     {
         victimDEF -= 1;
-        // SetPlayerDEF(_playerDefense);
         Console.WriteLine($"{user} has distracted {victim}.");
         Console.WriteLine($"{victim} defense decreased to {victimDEF}.");
         return victimDEF;
     }
 
-    void UpdateDEF(int defense, string victim)
+    private void UpdateDEF(int defense, string victim)
     {
         if (victim == "Player")
         {

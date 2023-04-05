@@ -2,16 +2,16 @@ using System;
 
 class Attack
 {
-    private bool isHit;
-    private int remainingHP;
+    private bool _isHit;
+    private int _remainingHP;
 
     public Attack(int userATK, int victimDEF, int victimHP, string user)
     {
-        isHit = HitChance(victimDEF);
-        if (isHit == true)
+        _isHit = HitChance(victimDEF);
+        if (_isHit == true)
         {
-            remainingHP = CalculateDamage(userATK, victimDEF, victimHP, user);
-            UpdateHP(remainingHP, user);
+            _remainingHP = CalculateDamage(userATK, victimDEF, victimHP, user);
+            UpdateHP(_remainingHP, user);
         }
         else
         {
@@ -25,13 +25,13 @@ class Attack
         int hitChance = hitRoll - victimDEF;
         if (hitChance > 0)
         {
-            isHit = true;
+            _isHit = true;
         }
         else
         {
-            isHit = false;
+            _isHit = false;
         }
-        return isHit;
+        return _isHit;
     }
 
     private int CalculateDamage(int userATK, int victimDEF, int victimHP, string user)
