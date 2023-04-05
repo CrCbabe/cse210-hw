@@ -9,23 +9,33 @@ class Encounter
     protected int _enemyAttack;
     protected int _enemyDefense;
 
+    //test on how to run constructor
+    Player player = new Player();
+    Enemy enemy = new Enemy();
+
     public Encounter()
     {
         SetStats();
-        while (_playerHealth > 0 || _enemyHealth > 0)
+    }
+
+    public void Start()
+    {
+        // while (_playerHealth > 0 || _enemyHealth > 0)
+        int turns = 0;
+        while (turns < 1)
         {
             RunCombatTurn();
+            turns++;
         }
         EndCombat();
     }
-
-    void RunCombatTurn()
+    private void RunCombatTurn()
     {
-        Player player = new Player();
-        Enemy enemy = new Enemy();
+        player.Begin();
+        enemy.Begin();
     }
 
-    void EndCombat()
+    private void EndCombat()
     {
         if (_playerHealth > 0)
         {
@@ -37,35 +47,7 @@ class Encounter
         }
     }
 
-    // public int GetPlayerHP()
-    // {
-    //     return _playerHealth;
-    // }
 
-    // public int GetPlayerATK()
-    // {
-    //     return _playerAttack;
-    // }
-
-    // public int GetPlayerDEF()
-    // {
-    //     return _playerDefense;
-    // }
-
-    // public int GetEnemyHP()
-    // {
-    //     return _enemyHealth;
-    // }
-
-    // public int GetEnemyATK()
-    // {
-    //     return _enemyAttack;
-    // }
-
-    // public int GetEnemyDEF()
-    // {
-    //     return _enemyDefense;
-    // }
     private void SetStats()
     {
         SetPlayerHP(30);
@@ -106,3 +88,33 @@ class Encounter
         _enemyDefense = enemyDEF;
     }
 }
+
+// public int GetPlayerHP()
+// {
+//     return _playerHealth;
+// }
+
+// public int GetPlayerATK()
+// {
+//     return _playerAttack;
+// }
+
+// public int GetPlayerDEF()
+// {
+//     return _playerDefense;
+// }
+
+// public int GetEnemyHP()
+// {
+//     return _enemyHealth;
+// }
+
+// public int GetEnemyATK()
+// {
+//     return _enemyAttack;
+// }
+
+// public int GetEnemyDEF()
+// {
+//     return _enemyDefense;
+// }
