@@ -3,20 +3,22 @@ using System;
 class Attack
 {
     private bool isHit;
+    private int remainingHP;
 
     public Attack(int userATK, int victimDEF, int victimHP, string user)
     {
         isHit = HitChance(victimDEF);
         if (isHit == true)
         {
-            CalculateDamage(userATK, victimDEF, victimHP, user);
+            remainingHP = CalculateDamage(userATK, victimDEF, victimHP, user);
+            UpdateHP(remainingHP, user);
         }
         else
         {
             Console.WriteLine($"{user} attacks and misses!");
         }
     }
-    bool HitChance(int victimDEF)
+    private bool HitChance(int victimDEF)
     {
         Random random = new Random();
         int hitRoll = random.Next(1, 6);
@@ -32,11 +34,23 @@ class Attack
         return isHit;
     }
 
-    void CalculateDamage(int userATK, int victimDEF, int victimHP, string user)
+    private int CalculateDamage(int userATK, int victimDEF, int victimHP, string user)
     {
         int damage = userATK - victimDEF;
         victimHP -= damage;
-        // SetPlayerHP(_playerHealth);
         Console.WriteLine($"{user} attacks and deals {damage} damage!");
+        return victimHP;
+    }
+
+    private void UpdateHP(int health, string user)
+    {
+        if (user == "Player")
+        {
+            Program._enemyHealth = health;
+        }
+        else
+        {
+            Program._playerHealth = health;
+        }
     }
 }
